@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfq2iqhuccltx"]
+[gd_scene load_steps=7 format=3 uid="uid://dfq2iqhuccltx"]
 
+[ext_resource type="Script" uid="uid://7pgcmberepa8" path="res://scenes/Game.cs" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://q3xdilfnb4m1" path="res://scenes/tree_1.tscn" id="3_lnu2h"]
@@ -7,9 +8,14 @@
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lnu2h"]
 b = Vector2(0, 640)
 
-[node name="Game" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(380, 188)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_timer")]
+script = ExtResource("1_lbhrr")
+_timer = NodePath("CarTimer")
+
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_uwrxv")
 metadata/_edit_lock_ = true
 
@@ -49,3 +55,17 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="CarTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="FinishArea2D" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea2D"]
+position = Vector2(0, -224)
+shape = SubResource("RectangleShape2D_lbhrr")
+debug_color = Color(0.88331753, 0.3191572, 0.2500637, 0.41960785)
+
+[connection signal="timeout" from="CarTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="FinishArea2D" to="Player" method="_OnBodyEntered"]
