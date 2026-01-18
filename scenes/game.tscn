@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfq2iqhuccltx"]
+
+[ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://q3xdilfnb4m1" path="res://scenes/tree_1.tscn" id="3_lnu2h"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lnu2h"]
+b = Vector2(0, 640)
+
+[node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uwrxv")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+
+[node name="TreesAndBox1" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(158, 217)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-192, -320)
+shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+position = Vector2(192, -320)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2(-192, -320)
+rotation = -1.5707964
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2(-190, 320)
+rotation = -1.5707964
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+shape = SubResource("SegmentShape2D_lnu2h")
