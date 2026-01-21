@@ -19,6 +19,8 @@ texture = ExtResource("1_uwrxv")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+light_mask = 0
+visibility_layer = 7
 
 [node name="TreesAndBox1" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(158, 217)
@@ -26,6 +28,7 @@ position = Vector2(158, 217)
 [node name="Walls" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+collision_layer = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
@@ -34,6 +37,7 @@ shape = SubResource("SegmentShape2D_lnu2h")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
 position = Vector2(192, -320)
+collision_layer = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
@@ -42,6 +46,7 @@ shape = SubResource("SegmentShape2D_lnu2h")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
 position = Vector2(-192, -320)
 rotation = -1.5707964
+collision_layer = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
@@ -50,6 +55,7 @@ shape = SubResource("SegmentShape2D_lnu2h")
 [node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
 position = Vector2(-190, 320)
 rotation = -1.5707964
+collision_layer = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
@@ -59,6 +65,7 @@ shape = SubResource("SegmentShape2D_lnu2h")
 autostart = true
 
 [node name="FinishArea2D" type="Area2D" parent="."]
+collision_layer = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea2D"]

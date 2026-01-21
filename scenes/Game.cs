@@ -17,13 +17,20 @@ namespace Game
 
     private void _OnCarTimerTimeout()
     {
-      GD.Print("Car spawned");
       var car = _carScene.Instantiate() as Car.Car;
       var posMarker = _carStartPositionsNode.GetChildren().PickRandom() as Marker2D;
 
       car.Position = posMarker.Position;
 
       _carsNode.AddChild(car);
+      car.Connect("body_entered", Callable.From<Node2D>(_OnBodyEntered));
+    }
+
+    private void _OnBodyEntered(Node2D body)
+    {
+      {
+        GD.Print($"Body entered: {body}");
+      }
     }
   }
 }

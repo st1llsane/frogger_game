@@ -6,7 +6,7 @@ namespace Car
   {
     public Sprite2D sprite;
     public Vector2 direction = Vector2.Left;
-    public int speed = 1;
+    public int speed = 160;
 
     public override void _Ready()
     {
@@ -21,12 +21,11 @@ namespace Car
 
     public override void _Process(double delta)
     {
-      Position += direction * speed;
+      Position += direction * speed * (float)delta;
     }
 
     private void _OnCarScreenExited()
     {
-      GD.Print("Car destroyed");
       QueueFree();
     }
   }

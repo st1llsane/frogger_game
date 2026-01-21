@@ -97,6 +97,7 @@ animations = [{
 size = Vector2(10, 9)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -113,6 +114,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+process_callback = 0
 limit_left = -192
 limit_top = -320
 limit_right = 192

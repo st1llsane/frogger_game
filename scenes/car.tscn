@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://dydntl3qaemfe" path="res://scenes/Car.cs" id="1_qt2eu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt2eu"]
-size = Vector2(22, 12)
+size = Vector2(20, 12)
 
 [node name="Car" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_qt2eu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
