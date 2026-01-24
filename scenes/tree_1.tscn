@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0so81ys3820n" path="res://graphics/objects/tree1.png" id="1_poro6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ueha"]
-size = Vector2(8, 9)
+size = Vector2(8, 10)
 
 [node name="Tree1" type="StaticBody2D"]
 collision_layer = 2
@@ -12,5 +12,5 @@ collision_layer = 2
 texture = ExtResource("1_poro6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.5)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_5ueha")

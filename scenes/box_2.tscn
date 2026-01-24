@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://clbhd4wblyqxw"]
+
+[ext_resource type="PackedScene" uid="uid://ctu3yngq03gxx" path="res://scenes/prop.tscn" id="1_lwv6c"]
+[ext_resource type="Texture2D" uid="uid://cv8cli0ov53f1" path="res://graphics/objects/box2.png" id="2_nvip6"]
+[ext_resource type="Shape2D" uid="uid://mg4buh3x4i45" path="res://shared/collisions/box_collision.tres" id="3_s2sfw"]
+
+[node name="Box2" instance=ExtResource("1_lwv6c")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_nvip6")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = ExtResource("3_s2sfw")

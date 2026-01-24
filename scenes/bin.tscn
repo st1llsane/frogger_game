@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqqefnrhpebwi"]
+
+[ext_resource type="PackedScene" uid="uid://ctu3yngq03gxx" path="res://scenes/prop.tscn" id="1_688sc"]
+[ext_resource type="Texture2D" uid="uid://beho7qo80tneo" path="res://graphics/objects/bin.png" id="2_kk33v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2wrr"]
+size = Vector2(6, 6)
+
+[node name="Bin" instance=ExtResource("1_688sc")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kk33v")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_j2wrr")

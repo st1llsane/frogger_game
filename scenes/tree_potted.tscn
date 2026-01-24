@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://7tyknjv53net"]
+
+[ext_resource type="PackedScene" uid="uid://ctu3yngq03gxx" path="res://scenes/prop.tscn" id="1_4e0dd"]
+[ext_resource type="Texture2D" uid="uid://boj6kq1t4mduj" path="res://graphics/objects/tree potted.png" id="2_y8c7i"]
+[ext_resource type="Shape2D" uid="uid://db87gusat45bc" path="res://shared/collisions/tree_collision.tres" id="3_6duyu"]
+
+[node name="TreePotted" instance=ExtResource("1_4e0dd")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_y8c7i")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 8)
+shape = ExtResource("3_6duyu")
