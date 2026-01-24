@@ -48,7 +48,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 y_sort_enabled = true
-position = Vector2(105, -210)
+position = Vector2(23, 45)
 collision_mask = 15
 
 [node name="Props" type="Node2D" parent="."]
@@ -174,13 +174,13 @@ position = Vector2(171, 27)
 position = Vector2(156, 27)
 
 [node name="Box6" parent="Props/Boxes" instance=ExtResource("14_qnb83")]
-position = Vector2(-169, 42)
+position = Vector2(-162, 42)
 
 [node name="Box5" parent="Props/Boxes" instance=ExtResource("7_u5sy4")]
-position = Vector2(-160, 33)
+position = Vector2(-153, 33)
 
 [node name="Box4" parent="Props/Boxes" instance=ExtResource("15_sww3w")]
-position = Vector2(-173, 33)
+position = Vector2(-166, 33)
 
 [node name="Cars" type="Node2D" parent="Props"]
 y_sort_enabled = true
@@ -218,6 +218,10 @@ texture = ExtResource("19_v2yb1")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Props/Other"]
 position = Vector2(161, -231)
+texture = ExtResource("18_wljb1")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Props/Other"]
+position = Vector2(-205, 40)
 texture = ExtResource("18_wljb1")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Props/Other"]
@@ -304,7 +308,7 @@ polygon = PackedVector2Array(20, -21, 20, -32, 68, -32, 68, 20, 20, 20, 20, 14, 
 polygon = PackedVector2Array(114, -270, 115, -305, 141, -299, 167, -305, 166, -271, 162, -284, 142, -283, 119, -285)
 
 [node name="Sign" parent="Props/Other" instance=ExtResource("26_sgl2t")]
-position = Vector2(-72, 192)
+position = Vector2(-70, 191)
 
 [node name="Sign2" parent="Props/Other" instance=ExtResource("26_sgl2t")]
 position = Vector2(-116, 26)
@@ -430,6 +434,7 @@ position = Vector2(202, -103)
 position = Vector2(202, -31)
 
 [node name="CarTimer" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
 
 [node name="FinishArea2D" type="Area2D" parent="."]

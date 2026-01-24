@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Godot;
 
 namespace Car
@@ -7,6 +9,11 @@ namespace Car
     public Sprite2D sprite;
     public Vector2 direction = Vector2.Left;
     public int speed = 160;
+    private readonly List<Texture2D> colors = [
+      ResourceLoader.Load<Texture2D>("res://graphics/cars/green.png"),
+      ResourceLoader.Load<Texture2D>("res://graphics/cars/red.png"),
+      ResourceLoader.Load<Texture2D>("res://graphics/cars/yellow.png")
+      ];
 
     public override void _Ready()
     {
@@ -17,6 +24,8 @@ namespace Car
         direction = Vector2.Right;
         sprite.FlipH = true;
       }
+
+      sprite.Texture = colors[new Random().Next(3)];
     }
 
     public override void _Process(double delta)
