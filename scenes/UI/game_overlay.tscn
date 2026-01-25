@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckwi0h2gea18y"]
+
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="1_3j1fm"]
+[ext_resource type="Script" uid="uid://dq7rj48b8u74p" path="res://scenes/UI/GameOverlay.cs" id="1_ufij1"]
+
+[node name="GameOverlay" type="CanvasLayer"]
+script = ExtResource("1_ufij1")
+
+[node name="GameTimeLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_3j1fm")
+theme_override_font_sizes/font_size = 28
+text = "Game time: "
+
+[node name="GameTimer" type="Timer" parent="."]
+ignore_time_scale = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dfq2iqhuccltx"]
+[gd_scene load_steps=32 format=3 uid="uid://dfq2iqhuccltx"]
 
 [ext_resource type="Script" uid="uid://7pgcmberepa8" path="res://scenes/Game.cs" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bykvavuyy06ke" path="res://scenes/bench.tscn" id="24_suyxu"]
 [ext_resource type="PackedScene" uid="uid://gdwwefl4fvka" path="res://scenes/sign.tscn" id="26_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://bqqefnrhpebwi" path="res://scenes/bin.tscn" id="27_qouja"]
+[ext_resource type="PackedScene" uid="uid://ckwi0h2gea18y" path="res://scenes/UI/game_overlay.tscn" id="28_sww3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
 size = Vector2(8, 14.75)
@@ -434,7 +435,7 @@ position = Vector2(202, -103)
 position = Vector2(202, -31)
 
 [node name="CarTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.12
 autostart = true
 
 [node name="FinishArea2D" type="Area2D" parent="."]
@@ -445,6 +446,8 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -161.5)
 shape = SubResource("RectangleShape2D_lbhrr")
 debug_color = Color(0.88331753, 0.3191572, 0.2500637, 0.41960785)
+
+[node name="GameOverlay" parent="." instance=ExtResource("28_sww3w")]
 
 [connection signal="timeout" from="CarTimer" to="." method="_OnCarTimerTimeout"]
 [connection signal="body_entered" from="FinishArea2D" to="Player" method="_OnBodyEntered"]

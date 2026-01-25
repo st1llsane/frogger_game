@@ -56,7 +56,7 @@ namespace Player
       }
     }
 
-    private void _OnBodyEntered(Node2D body)
+    static private void _OnBodyEntered(Node2D body)
     {
       GD.Print("Area entered");
     }
