@@ -29,7 +29,6 @@ namespace GameOverlay
 
     private void _OnTimerTimeout()
     {
-      GD.Print("TIMEOUT");
       _seconds += 1;
     }
   }

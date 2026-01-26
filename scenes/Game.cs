@@ -1,4 +1,5 @@
 using Godot;
+using Frogger.shared;
 
 namespace Game
 {
@@ -28,9 +29,8 @@ namespace Game
 
     private void _OnBodyEntered(Node2D body)
     {
-      {
-        GD.Print($"Body entered: {body}");
-      }
+      GD.Print($"Body entered: {body}");
+      SceneHelper.ChangeToMainScreen(this);
     }
   }
 }

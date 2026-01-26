@@ -23,7 +23,6 @@ namespace Player
         InputKey.Up.Raw(),
         InputKey.Down.Raw()
       );
-      // GD.Print($"DIRECTION: {direction}");
 
       Velocity = direction * speed;
 
@@ -56,9 +55,10 @@ namespace Player
       }
     }
 
-    static private void _OnBodyEntered(Node2D body)
+    private void _OnFinishEntered(Node2D body)
     {
-      GD.Print("Area entered");
+      GD.Print("Finish entered");
+      SceneHelper.ChangeToMainScreen(this);
     }
   }
 }

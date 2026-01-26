@@ -450,4 +450,4 @@ debug_color = Color(0.88331753, 0.3191572, 0.2500637, 0.41960785)
 [node name="GameOverlay" parent="." instance=ExtResource("28_sww3w")]
 
 [connection signal="timeout" from="CarTimer" to="." method="_OnCarTimerTimeout"]
-[connection signal="body_entered" from="FinishArea2D" to="Player" method="_OnBodyEntered"]
+[connection signal="body_entered" from="FinishArea2D" to="Player" method="_OnFinishEntered"]

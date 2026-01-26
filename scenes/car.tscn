@@ -9,6 +9,7 @@ size = Vector2(20, 12)
 [node name="Car" type="Area2D"]
 collision_layer = 4
 script = ExtResource("1_qt2eu")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_c35m8")
